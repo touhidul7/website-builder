@@ -26,6 +26,8 @@ const groups = [
       { to: "/resources", label: "Parent Resources" },
       { to: "/free-learning-plan", label: "Free Parent Guide" },
       { to: "/locations", label: "Locations" },
+      { to: "/faqs", label: "FAQs" },
+      { to: "/contact", label: "Contact" },
       { to: "/book", label: "Book a Consultation" },
     ],
   },
@@ -60,7 +62,9 @@ export function Footer() {
 
         {groups.map((group) => (
           <div key={group.title}>
-            <h3 className="text-sm font-bold tracking-wide text-primary uppercase">{group.title}</h3>
+            <h3 className="text-sm font-bold tracking-wide text-primary uppercase">
+              {group.title}
+            </h3>
             <ul className="mt-4 space-y-2.5">
               {group.links.map((link) => (
                 <li key={link.to}>
