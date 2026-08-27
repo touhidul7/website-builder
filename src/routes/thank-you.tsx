@@ -6,8 +6,8 @@ export const Route = createFileRoute("/thank-you")({
   validateSearch: z.object({ resource: z.string().optional() }),
   head: () =>
     pageHead(
-      "Thank You | Northline Capital Partners",
-      "Your information has been received by Northline Capital Partners.",
+      "Thank You | Nevio Capital Partners",
+      "Your information has been received by Nevio Capital Partners.",
       "/thank-you",
       true,
     ),
@@ -20,7 +20,7 @@ function Page() {
       <PageHero
         eyebrow="Next steps"
         title="Thank you. Your inquiry has been received."
-        intro="Northline will review the information you shared and respond regarding potential fit and next steps. Please do not send sensitive or confidential records until an appropriate process has been agreed."
+        intro="Nevio will review the information you shared and respond regarding potential fit and next steps. Please do not send sensitive or confidential records until an appropriate process has been agreed."
         actions={
           resource === "readiness-checklist" ? (
             <Link to="/resources/readiness-checklist" className="btn btn-gold">

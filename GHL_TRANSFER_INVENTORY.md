@@ -1,4 +1,4 @@
-# Northline GHL Transfer Inventory
+# Nevio GHL Transfer Inventory
 
 ## Global sections
 
@@ -23,9 +23,17 @@
 ## Styling
 
 - Source: `src/styles.css`.
-- Shared content width: `min(1180px, 100% - 40px)`; 30px mobile gutters.
+- Shared content width: `min(1240px, 100% - 44px)`; 20px mobile gutters.
 - Tokens: navy `#071720/#0b2230/#123344`, gold `#a97835/#c59a58/#d8b67f`, cream `#f4f0e8`, paper `#fbfaf7`, ink `#10212b`, muted `#5f6b72`, line `#d8d4ca`.
-- Typography: Libre Baskerville headings and DM Sans body.
+- Typography: Georgia headings and Inter/Arial/Helvetica body.
+
+## Identity assets
+
+- Light header/footer wordmark: `public/brand/nevio-wordmark-light.svg`.
+- Dark wordmark for cream/white backgrounds: `public/brand/nevio-wordmark-dark.svg`.
+- Compact and one-color marks: `public/brand/nevio-mark.svg` and `nevio-mark-one-color.svg`.
+- Browser/app assets: `public/favicon.svg`, `public/apple-touch-icon.png`, and `public/site.webmanifest`.
+- Social preview: `public/brand/nevio-social-card.webp`.
 
 ## Route and metadata source
 

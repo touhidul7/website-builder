@@ -4,18 +4,18 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/privacy-policy")({
   head: () =>
     pageHead(
-      "Privacy Policy | Northline Capital Partners",
-      "Learn how Northline may collect, use, protect, and retain website and inquiry information.",
+      "Privacy Policy | Nevio Capital Partners",
+      "Learn how Nevio may collect, use, protect, and retain website and inquiry information.",
       "/privacy-policy",
     ),
   component: () => (
     <LegalPage
       title="Privacy Policy"
-      intro="This draft explains how information submitted through the Northline website may be handled."
+      intro="This draft explains how information submitted through the Nevio website may be handled."
       sections={[
         {
           heading: "Information collected",
-          body: "Northline may collect information you provide through inquiry and resource forms, including names, business contact details, organization information, raise context, and consent records. The site may also receive basic device, referral, page, and campaign information.",
+          body: "Nevio may collect information you provide through inquiry and resource forms, including names, business contact details, organization information, raise context, and consent records. The site may also receive basic device, referral, page, and campaign information.",
         },
         {
           heading: "How information is used",
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/privacy-policy")({
         },
         {
           heading: "Service providers",
-          body: "Northline may use providers for hosting, forms, customer relationship management, communications, analytics, and security. Providers should receive only information reasonably needed for their role and handle it under appropriate terms.",
+          body: "Nevio may use providers for hosting, forms, customer relationship management, communications, analytics, and security. Providers should receive only information reasonably needed for their role and handle it under appropriate terms.",
         },
         {
           heading: "Retention and safeguards",

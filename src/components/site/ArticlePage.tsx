@@ -2,12 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { Breadcrumbs, GlobalCTA, PageHero } from "./ui";
 import type { Article } from "@/content/insights";
 export function ArticlePage({ article }: { article: Article }) {
+  const relatedService =
+    article.category === "Strategy"
+      ? "/services/capital-strategy"
+      : article.category === "Readiness"
+        ? "/services/investor-readiness"
+        : "/services/transaction-coordination";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.description,
-    author: { "@type": "Organization", name: "Northline Capital Partners" },
+    author: { "@type": "Organization", name: "Nevio Capital Partners" },
   };
   return (
     <>
@@ -30,18 +36,17 @@ export function ArticlePage({ article }: { article: Article }) {
               )}
             </section>
           ))}
-          <div className="readiness-panel" style={{ marginTop: "3rem" }}>
+          <div className="readiness-panel space-top-lg">
             <h2>Prepare before outreach creates pressure.</h2>
             <p>
-              Use Northline's readiness checklist to review the strategy, information, materials,
+              Use Nevio's readiness checklist to review the strategy, information, materials,
               management alignment, and process foundations behind your raise.
             </p>
-            <Link
-              to="/capital-raise-readiness-checklist"
-              className="btn btn-dark"
-              style={{ marginTop: "1.5rem" }}
-            >
+            <Link to="/capital-raise-readiness-checklist" className="btn btn-dark space-top">
               Download the Readiness Checklist
+            </Link>
+            <Link to={relatedService} className="text-link">
+              Explore the related Nevio service
             </Link>
           </div>
           <p>

@@ -6,7 +6,7 @@ import { articles } from "@/content/insights";
 export const Route = createFileRoute("/insights/")({
   head: () =>
     pageHead(
-      "Capital Raising Insights | Northline Capital Partners",
+      "Capital Raising Insights | Nevio Capital Partners",
       "Practical guidance on capital strategy, investor readiness, data rooms, and disciplined raise processes.",
       "/insights",
     ),
@@ -18,7 +18,7 @@ function Page() {
       <Breadcrumbs items={[{ label: "Insights" }]} />
       <PageHero
         eyebrow="Insights"
-        title="Prepare for the questions before they shape the process."
+        title="Practical thinking for a better-prepared raise."
         intro="Practical, business-focused guidance for leaders building a more credible case for capital."
       />
       <section className="section">
@@ -27,7 +27,7 @@ function Page() {
             {articles.map((a) => (
               <article className="card" key={a.slug}>
                 <p className="eyebrow">{a.category}</p>
-                <h2 style={{ fontSize: "1.45rem" }}>{a.title}</h2>
+                <h2 className="article-card-title">{a.title}</h2>
                 <p>{a.description}</p>
                 <Link to={`/insights/${a.slug}`} className="text-link">
                   Read insight <ArrowRight />
@@ -35,14 +35,10 @@ function Page() {
               </article>
             ))}
           </div>
-          <div className="readiness-panel" style={{ marginTop: "3rem" }}>
+          <div className="readiness-panel space-top-lg">
             <h2>How ready is your capital case?</h2>
             <p>Review nine foundations before investor outreach.</p>
-            <Link
-              to="/capital-raise-readiness-checklist"
-              className="btn btn-dark"
-              style={{ marginTop: "1.25rem" }}
-            >
+            <Link to="/capital-raise-readiness-checklist" className="btn btn-dark space-top">
               Download the Readiness Checklist
             </Link>
           </div>

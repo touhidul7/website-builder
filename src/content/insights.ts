@@ -124,7 +124,7 @@ export const articles: Article[] = [
         heading: "Risk and response",
         paragraphs: [
           "Every opportunity has risk. Review may cover competition, customer concentration, regulation, intellectual property, supply, technology, execution, financing, governance, key-person dependency, and assumptions in the plan. Claiming that no material risk exists is rarely persuasive.",
-          "Create a risk register that identifies the risk, potential effect, evidence, mitigation, owner, and next decision point. Some areas require legal, tax, accounting, or licensed advice. Northline can help organize business questions and coordination, but specialists must perform professional or regulated work.",
+          "Create a risk register that identifies the risk, potential effect, evidence, mitigation, owner, and next decision point. Some areas require legal, tax, accounting, or licensed advice. Nevio can help organize business questions and coordination, but specialists must perform professional or regulated work.",
         ],
       },
       {

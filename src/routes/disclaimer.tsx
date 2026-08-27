@@ -4,8 +4,8 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/disclaimer")({
   head: () =>
     pageHead(
-      "Disclaimer | Northline Capital Partners",
-      "Important limitations regarding Northline's general information and business-advisory services.",
+      "Disclaimer | Nevio Capital Partners",
+      "Important limitations regarding Nevio's general information and business-advisory services.",
       "/disclaimer",
     ),
   component: () => (
@@ -15,11 +15,11 @@ export const Route = createFileRoute("/disclaimer")({
       sections={[
         {
           heading: "General business-advisory purpose",
-          body: "Northline provides general information and business-advisory support related to capital strategy, readiness, materials, and process. Content must be considered in the context of each opportunity.",
+          body: "Nevio provides general information and business-advisory support related to capital strategy, readiness, materials, and process. Content must be considered in the context of each opportunity.",
         },
         {
           heading: "No legal, tax, accounting, or investment advice",
-          body: "Northline does not provide legal, tax, accounting, or investment advice through this website. Visitors should obtain independent advice from appropriately qualified professionals.",
+          body: "Nevio does not provide legal, tax, accounting, or investment advice through this website. Visitors should obtain independent advice from appropriately qualified professionals.",
         },
         {
           heading: "No securities offer or solicitation",
@@ -27,11 +27,11 @@ export const Route = createFileRoute("/disclaimer")({
         },
         {
           heading: "No guaranteed outcome",
-          body: "Northline does not guarantee capital, financing, introductions, closing, returns, timing, or any other outcome. Results depend on the opportunity, market conditions, diligence, decision processes, and other factors.",
+          body: "Nevio does not guarantee capital, financing, introductions, closing, returns, timing, or any other outcome. Results depend on the opportunity, market conditions, diligence, decision processes, and other factors.",
         },
         {
           heading: "Regulated activities",
-          body: "When work involves regulated activity, it must be performed by appropriately registered or licensed professionals. Northline may coordinate with specialists but does not replace them.",
+          body: "When work involves regulated activity, it must be performed by appropriately registered or licensed professionals. Nevio may coordinate with specialists but does not replace them.",
         },
         {
           heading: "Examples and future content",

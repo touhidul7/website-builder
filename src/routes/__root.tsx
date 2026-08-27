@@ -47,7 +47,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
       <div className="max-w-md text-center">
         <h1 className="text-3xl">This page did not load</h1>
         <p className="mt-4 text-sm leading-7 text-muted-foreground">
-          Please try again or return to the Northline home page.
+          Please try again or return to the Nevio home page.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <button
@@ -73,19 +73,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Northline Capital Partners" },
+      { title: "Nevio Capital Partners" },
       {
         name: "description",
         content:
           "Capital-raising strategy, investor readiness, investor-facing materials, and disciplined process support.",
       },
-      { name: "author", content: "Northline Capital Partners" },
+      { name: "author", content: "Nevio Capital Partners" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -125,7 +127,7 @@ function RootComponent() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Northline Capital Partners",
+              name: "Nevio Capital Partners",
             }),
           }}
         />

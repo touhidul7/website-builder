@@ -5,6 +5,6 @@ import { articles } from "@/content/insights";
 const a = articles[0]!;
 export const Route = createFileRoute("/insights/preparing-for-a-capital-raise")({
   head: () =>
-    pageHead(`${a.title} | Northline`, a.description, "/insights/preparing-for-a-capital-raise"),
+    pageHead(`${a.title} | Nevio`, a.description, "/insights/preparing-for-a-capital-raise"),
   component: () => <ArticlePage article={a} />,
 });

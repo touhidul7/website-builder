@@ -11,9 +11,8 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container-page footer-grid">
         <div>
-          <Link to="/" className="brand brand-footer">
-            <span>Northline</span>
-            <small>Capital Partners</small>
+          <Link to="/" className="brand brand-footer" aria-label="Nevio Capital Partners — Home">
+            <img src="/brand/nevio-wordmark-light.svg" alt="Nevio Capital Partners" />
           </Link>
           <p>
             Capital-raising strategy, investor readiness, investor-facing materials, and disciplined

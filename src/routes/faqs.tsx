@@ -5,8 +5,8 @@ import { faqs } from "@/content/site";
 export const Route = createFileRoute("/faqs")({
   head: () =>
     pageHead(
-      "Capital Raising FAQs | Northline Capital Partners",
-      "Answers about Northline's capital-raising strategy, readiness, materials, process support, scope, and initial conversations.",
+      "Capital Raising FAQs | Nevio Capital Partners",
+      "Answers about Nevio's capital-raising strategy, readiness, materials, process support, scope, and initial conversations.",
       "/faqs",
     ),
   component: Page,
@@ -27,7 +27,7 @@ function Page() {
       <PageHero
         eyebrow="Frequently asked questions"
         title="Start with clarity."
-        intro="Understand Northline's scope, what preparation usually involves, and what an initial conversation requires."
+        intro="Understand Nevio's scope, what preparation usually involves, and what an initial conversation requires."
       />
       <section className="section">
         <div className="container-page">

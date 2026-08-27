@@ -61,7 +61,11 @@ export function InquiryForm() {
       });
       nav({ to: "/thank-you" });
     } else {
-      setError(result.message || "Unable to send your inquiry.");
+      setError(
+        result.message === "Online inquiry setup is being finalized." && !fallback
+          ? "Online inquiry is currently unavailable. Please return after an approved contact method is published."
+          : result.message || "Unable to send your inquiry.",
+      );
     }
   }
   const fallback = Boolean(businessConfig.contactEmail || businessConfig.phone);
@@ -160,7 +164,7 @@ export function InquiryForm() {
           <small>Maximum 1,500 characters.</small>
         </div>
         <div className="field full">
-          <label htmlFor="referral">How did you hear about Northline?</label>
+          <label htmlFor="referral">How did you hear about Nevio?</label>
           <input id="referral" name="referral" />
         </div>
         <input
@@ -168,7 +172,7 @@ export function InquiryForm() {
           tabIndex={-1}
           autoComplete="off"
           aria-hidden="true"
-          style={{ position: "absolute", left: "-9999px" }}
+          className="honeypot"
         />
         <div className="field full form-note">
           Do not include confidential financial records, personal identification, bank information,
@@ -177,19 +181,19 @@ export function InquiryForm() {
         <label className="consent field full">
           <input type="checkbox" name="consent" required value="yes" />
           <span>
-            I agree that Northline may use this information to respond to my inquiry, subject to the{" "}
-            <Link to="/privacy-policy" style={{ textDecoration: "underline" }}>
+            I agree that Nevio may use this information to respond to my inquiry, subject to the{" "}
+            <Link to="/privacy-policy" className="privacy-link">
               Privacy Policy
             </Link>
             .
           </span>
         </label>
       </div>
-      <button className="btn btn-gold" disabled={sending} style={{ marginTop: "1.5rem" }}>
+      <button className="btn btn-gold form-submit" disabled={sending}>
         {sending ? "Sending…" : "Submit Confidential Inquiry"}
       </button>
       {error && (
-        <p className="status-error" role="alert">
+        <p className="status-error" role="alert" aria-live="polite">
           {error}
           {fallback && <> Please use the approved contact method shown below.</>}
         </p>
@@ -252,16 +256,16 @@ export function ChecklistForm() {
         <label className="consent field full">
           <input type="checkbox" name="consent" required value="yes" />
           <span>
-            I agree that Northline may respond and provide the resource, subject to the{" "}
+            I agree that Nevio may respond and provide the resource, subject to the{" "}
             <Link to="/privacy-policy">Privacy Policy</Link>.
           </span>
         </label>
       </div>
-      <button className="btn btn-gold" disabled={sending} style={{ marginTop: "1.5rem" }}>
+      <button className="btn btn-gold form-submit" disabled={sending}>
         {sending ? "Sending…" : "Get the Checklist"}
       </button>
       {error && (
-        <p className="status-error" role="alert">
+        <p className="status-error" role="alert" aria-live="polite">
           {error}
         </p>
       )}

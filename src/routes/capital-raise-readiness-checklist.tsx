@@ -6,7 +6,7 @@ import { readinessItems } from "@/content/site";
 export const Route = createFileRoute("/capital-raise-readiness-checklist")({
   head: () =>
     pageHead(
-      "Capital Raise Readiness Checklist | Northline",
+      "Capital Raise Readiness Checklist | Nevio",
       "Review the strategy, information, materials, management alignment, and process foundations needed before investor outreach.",
       "/capital-raise-readiness-checklist",
     ),

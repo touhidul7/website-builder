@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, Compass, FileCheck2, UserRound } from "lucide-react";
-import hero from "@/assets/northline-capital-path.webp";
+import hero from "@/assets/nevio-hero.webp";
 import {
   FAQList,
   GlobalCTA,
+  Checklist,
   ProcessTimeline,
-  ReadinessPanel,
   SectionHeading,
   ServiceGrid,
 } from "@/components/site/ui";
@@ -13,8 +13,8 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     pageHead(
-      "Northline Capital Partners | Build a Stronger Case for Capital",
-      "Capital-raising strategy, investor readiness, investor-facing materials, and disciplined process support for individuals and companies.",
+      "Capital Raising Strategy & Support | Nevio Capital Partners",
+      "Nevio helps individuals and companies prepare, position, and manage a disciplined capital-raising process. Start a confidential conversation.",
       "/",
     ),
   component: Home,
@@ -32,34 +32,38 @@ function Home() {
         />
         <div className="container-page">
           <div className="measure">
-            <p className="eyebrow">Northline Capital Partners</p>
+            <p className="eyebrow">Capital-raising strategy &amp; process support</p>
             <h1>Build a stronger case for capital.</h1>
             <p className="hero-intro">
-              Capital-raising strategy, investor readiness, investor-facing materials, and
-              disciplined process support for individuals and companies pursuing a serious
-              opportunity.
+              Nevio Capital Partners helps individuals and companies prepare for a raise,
+              communicate the opportunity clearly, and move through the capital process with
+              discipline.
             </p>
             <div className="button-row">
               <Link to="/contact" className="btn btn-gold">
-                Discuss Your Raise <ArrowRight />
+                Start a Confidential Conversation <ArrowRight />
               </Link>
-              <Link
-                to="/services"
-                className="btn btn-outline"
-                style={{ color: "white", borderColor: "rgba(255,255,255,.4)" }}
-              >
-                Explore Our Services
+              <Link to="/process" className="btn btn-outline btn-on-dark">
+                See How We Work
               </Link>
             </div>
+            <div className="hero-trust" aria-label="Nevio principles">
+              <span>Strategy first</span>
+              <span>Investor-ready communication</span>
+              <span>Focused execution</span>
+            </div>
+            <p className="hero-callout">
+              Capital is most useful when the strategy is already clear.
+            </p>
           </div>
         </div>
       </section>
       <section className="section">
         <div className="container-page">
           <SectionHeading
-            eyebrow="What Northline does"
-            title="Preparation that makes every capital conversation more productive."
-            intro="A credible raise depends on more than a deck. Strategy, evidence, materials, management alignment, and process discipline must tell the same story."
+            eyebrow="More than a pitch deck"
+            title="A capital raise is a business process—not a single presentation."
+            intro="Strategy, preparation, materials, outreach, follow-up, and diligence must operate as one coordinated process. A credible raise begins with a clear use of funds, supporting information, prepared conversations, and organized follow-through."
           />
           <ServiceGrid />
         </div>
@@ -68,7 +72,7 @@ function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Who we help"
-            title="Support shaped around the opportunity—not a generic fundraising script."
+            title="Ambitious opportunities that need a credible path to capital."
           />
           <div className="card-grid three">
             <article className="card">
@@ -124,7 +128,7 @@ function Home() {
             <div className="icon-box">
               <FileCheck2 />
             </div>
-            <h3>Northline brings the parts together.</h3>
+            <h3>Nevio brings the parts together.</h3>
             <p>
               We help leadership identify gaps early, establish owners and milestones, align the
               investor story with the underlying information, and prepare for the questions that
@@ -144,7 +148,7 @@ function Home() {
             intro="The work advances through five practical stages. Scope depends on readiness, needs, and where the raise stands today."
           />
           <ProcessTimeline />
-          <Link to="/process" className="btn btn-dark" style={{ marginTop: "2rem" }}>
+          <Link to="/process" className="btn btn-dark space-top">
             See How We Work
           </Link>
         </div>
@@ -181,7 +185,25 @@ function Home() {
       </section>
       <section className="section surface">
         <div className="container-page">
-          <ReadinessPanel />
+          <div className="readiness-panel">
+            <SectionHeading
+              eyebrow="Readiness diagnostic"
+              title="Are you ready to approach capital partners?"
+              intro="A useful first check is whether five essential questions can be answered clearly."
+            />
+            <Checklist
+              items={[
+                "Is the use of funds defined?",
+                "Are the amount and timing realistic?",
+                "Does the financial story explain its assumptions?",
+                "Are the supporting materials consistent?",
+                "Is the team ready for diligence questions?",
+              ]}
+            />
+            <Link to="/capital-raise-readiness-checklist" className="btn btn-dark">
+              Assess Your Readiness
+            </Link>
+          </div>
         </div>
       </section>
       <section className="section">
@@ -223,7 +245,7 @@ function Home() {
         <div className="container-page">
           <SectionHeading eyebrow="Frequently asked" title="Start with clarity." />
           <FAQList limit={4} />
-          <Link to="/faqs" className="btn btn-outline" style={{ marginTop: "2rem" }}>
+          <Link to="/faqs" className="btn btn-outline space-top">
             View All FAQs
           </Link>
         </div>

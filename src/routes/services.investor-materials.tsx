@@ -5,7 +5,7 @@ import { services } from "@/content/site";
 export const Route = createFileRoute("/services/investor-materials")({
   head: () =>
     pageHead(
-      "Investor Materials | Northline Capital Partners",
+      "Investor Materials & Capital Narrative | Nevio",
       "Build a clear investment narrative, executive summary, pitch-deck content, FAQ, and data-room index.",
       "/services/investor-materials",
     ),

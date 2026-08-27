@@ -1,0 +1,13 @@
+{
+  "name": "Nevio Capital Partners",
+  "short_name": "Nevio",
+  "description": "Capital-raising strategy, readiness, materials, and process support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#071720",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

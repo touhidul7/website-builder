@@ -5,8 +5,8 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead(
-      "Discuss Your Capital Raise | Northline Capital Partners",
-      "Share a brief overview of your opportunity, raise purpose, stage, amount range, and timing to discuss potential fit with Northline.",
+      "Discuss Your Capital Raise | Nevio Capital Partners",
+      "Share a brief overview of your opportunity, raise purpose, stage, amount range, and timing to discuss potential fit with Nevio.",
       "/contact",
     ),
   component: Page,
@@ -17,7 +17,7 @@ function Page() {
       <PageHero
         eyebrow="Discuss your raise"
         title="Start a confidential conversation."
-        intro="Tell us what you are building, why you are raising, and where the opportunity stands today. Northline will review the information and respond to discuss potential fit."
+        intro="Tell us what you are building, why you are raising, and where the opportunity stands today. Nevio will review the information and respond to discuss potential fit."
       />
       <section className="section">
         <div className="container-page two-col">

@@ -5,7 +5,7 @@ import { services } from "@/content/site";
 export const Route = createFileRoute("/services/transaction-coordination")({
   head: () =>
     pageHead(
-      "Transaction Coordination | Northline Capital Partners",
+      "Capital Raise Diligence Coordination | Nevio",
       "Coordinate diligence information, decisions, professional advisers, timelines, and closing readiness.",
       "/services/transaction-coordination",
     ),

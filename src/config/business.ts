@@ -1,5 +1,7 @@
 export const businessConfig = {
-  businessName: "Northline Capital Partners",
+  businessName: "Nevio Capital Partners",
+  shortName: "Nevio",
+  initials: "NCP",
   websiteUrl: import.meta.env.VITE_SITE_URL || "",
   contactEmail: import.meta.env.VITE_CONTACT_EMAIL || "",
   phone: import.meta.env.VITE_CONTACT_PHONE || "",
@@ -8,7 +10,7 @@ export const businessConfig = {
   inquiryWebhookUrl: import.meta.env.VITE_GHL_INQUIRY_WEBHOOK_URL || "",
   gtmId: import.meta.env.VITE_GTM_ID || "",
   ga4MeasurementId: import.meta.env.VITE_GA4_MEASUREMENT_ID || "",
-  legalEntityName: import.meta.env.VITE_LEGAL_ENTITY_NAME || "Northline Capital Partners",
+  legalEntityName: import.meta.env.VITE_LEGAL_ENTITY_NAME || "Nevio Capital Partners",
 };
 
 export function canonicalUrl(path: string) {

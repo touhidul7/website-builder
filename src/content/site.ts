@@ -11,6 +11,7 @@ import {
 export type Service = {
   slug: string;
   title: string;
+  headline: string;
   short: string;
   outcome: string;
   icon: LucideIcon;
@@ -22,8 +23,9 @@ export const services: Service[] = [
   {
     slug: "capital-strategy",
     title: "Capital Strategy",
+    headline: "Start the raise with a clear capital strategy.",
     short:
-      "Define why you are raising, what the capital must accomplish, and the most credible path forward.",
+      "Define what you are raising, why it matters, which capital paths may fit, and what must be true before outreach begins.",
     outcome:
       "A decision-ready raise strategy with clear objectives, assumptions, priorities, and owners.",
     icon: Target,
@@ -44,6 +46,7 @@ export const services: Service[] = [
   {
     slug: "investor-readiness",
     title: "Investor Readiness",
+    headline: "Prepare for the questions behind the pitch.",
     short:
       "Strengthen the information, proof points, internal alignment, and answers serious conversations require.",
     outcome: "A more credible, organized opportunity that is ready for informed scrutiny.",
@@ -65,6 +68,7 @@ export const services: Service[] = [
   {
     slug: "investor-materials",
     title: "Investor Materials",
+    headline: "Communicate the opportunity with clarity and consistency.",
     short: "Turn the business case into clear, consistent materials that support serious review.",
     outcome:
       "An investor-facing narrative and materials framework grounded in the facts of the opportunity.",
@@ -86,6 +90,7 @@ export const services: Service[] = [
   {
     slug: "raise-process-support",
     title: "Raise Process Support",
+    headline: "Run the raise as a disciplined process.",
     short:
       "Bring discipline to targeting, outreach preparation, conversations, follow-up, and decision tracking.",
     outcome:
@@ -108,6 +113,7 @@ export const services: Service[] = [
   {
     slug: "transaction-coordination",
     title: "Transaction Coordination",
+    headline: "Keep diligence organized as the process advances.",
     short:
       "Coordinate information, workstreams, decisions, and professional advisers as diligence advances.",
     outcome:
@@ -130,6 +136,7 @@ export const services: Service[] = [
   {
     slug: "post-raise-planning",
     title: "Post-Raise Planning",
+    headline: "Make the capital support the strategy.",
     short:
       "Translate the raise case into operating priorities, reporting discipline, and accountable execution.",
     outcome:
@@ -176,20 +183,20 @@ export const processSteps = [
 
 export const faqs = [
   [
-    "Who does Northline work with?",
-    "Northline supports individual founders, entrepreneurs, project sponsors, and companies that need a more structured approach to preparing for and managing a capital raise.",
+    "Who does Nevio work with?",
+    "Nevio supports individual founders, entrepreneurs, project sponsors, and companies that need a more structured approach to preparing for and managing a capital raise.",
   ],
   [
     "When should we begin preparing?",
     "Earlier is better. A strong raise begins before outreach, with a defined purpose, credible information, clear materials, and internal alignment.",
   ],
   [
-    "Does Northline guarantee funding?",
-    "No. Outcomes depend on the opportunity, market conditions, investor requirements, diligence, and other factors. Northline provides strategy and process support and does not promise a financing result.",
+    "Does Nevio guarantee funding?",
+    "No. Outcomes depend on the opportunity, market conditions, investor requirements, diligence, and other factors. Nevio provides strategy and process support and does not promise a financing result.",
   ],
   [
-    "Can Northline create our pitch deck?",
-    "Northline can help shape the investment narrative, structure the content, and coordinate supporting materials. Legal offering documents must be prepared or reviewed by qualified legal professionals.",
+    "Can Nevio create our pitch deck?",
+    "Nevio can help shape the investment narrative, structure the content, and coordinate supporting materials. Legal offering documents must be prepared or reviewed by qualified legal professionals.",
   ],
   [
     "Do we need financial projections?",
@@ -204,8 +211,8 @@ export const faqs = [
     "Initial conversations should focus on fit and scope. Sensitive or non-public information should only be shared through an agreed process with appropriate safeguards.",
   ],
   [
-    "Does Northline provide legal, tax, or investment advice?",
-    "No. Northline coordinates with the appropriate legal, accounting, tax, and licensed professionals when specialized or regulated work is required.",
+    "Does Nevio provide legal, tax, or investment advice?",
+    "No. Nevio coordinates with the appropriate legal, accounting, tax, and licensed professionals when specialized or regulated work is required.",
   ],
   [
     "How long does a raise take?",
@@ -213,7 +220,7 @@ export const faqs = [
   ],
   [
     "How do we start?",
-    "Submit the confidential inquiry form with a short overview. Northline will review it and respond regarding potential fit and next steps.",
+    "Submit the confidential inquiry form with a short overview. Nevio will review it and respond regarding potential fit and next steps.",
   ],
 ] as const;
 

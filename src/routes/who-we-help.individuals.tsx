@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Breadcrumbs,
   Checklist,
+  FAQList,
   GlobalCTA,
   PageHero,
   ProcessTimeline,
@@ -11,7 +12,7 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/who-we-help/individuals")({
   head: () =>
     pageHead(
-      "Capital Raise Support for Individuals | Northline",
+      "Capital Raising Support for Founders & Sponsors | Nevio",
       "Strategy, readiness, materials, and process support for founders, entrepreneurs, and project sponsors.",
       "/who-we-help/individuals",
     ),
@@ -25,8 +26,8 @@ function Page() {
       />
       <PageHero
         eyebrow="For individuals"
-        title="Turn a defined opportunity into a credible capital case."
-        intro="Northline helps founders, entrepreneurs, and project sponsors translate an opportunity into clear decisions, supporting information, investor materials, and a disciplined process."
+        title="Turn a defined opportunity into a credible capital story."
+        intro="Nevio helps founders, entrepreneurs, and project sponsors translate an opportunity into clear decisions, supporting information, investor materials, and a disciplined process."
         actions={
           <Link to="/contact" className="btn btn-gold">
             Discuss Your Raise
@@ -50,7 +51,44 @@ function Page() {
           />
         </div>
       </section>
+      <section className="section">
+        <div className="container-page two-col">
+          <div>
+            <SectionHeading
+              eyebrow="How Nevio helps"
+              title="Connect the vision to investor-ready facts."
+            />
+            <Checklist
+              items={[
+                "Clarify the capital strategy and defined use of funds",
+                "Organize proof points and supporting information",
+                "Shape clear investor-facing materials",
+                "Prepare for scrutiny and maintain follow-up discipline",
+                "Coordinate the appropriate specialist work",
+              ]}
+            />
+          </div>
+          <div className="card elevated">
+            <h2>Bring to the first conversation</h2>
+            <Checklist
+              items={[
+                "A concise opportunity overview",
+                "The approximate amount or range",
+                "The intended use of funds",
+                "Current stage and target timing",
+                "Any existing materials",
+              ]}
+            />
+          </div>
+        </div>
+      </section>
       <section className="section surface">
+        <div className="container-page">
+          <SectionHeading eyebrow="Common questions" title="Begin with the essentials." />
+          <FAQList limit={2} />
+        </div>
+      </section>
+      <section className="section">
         <div className="container-page">
           <SectionHeading
             eyebrow="A structured route"

@@ -1,9 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { services } from "@/content/site";
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = useLocation({ select: (location) => location.pathname });
   const close = () => setOpen(false);
   return (
     <header className="site-header">
@@ -11,9 +12,8 @@ export function Header() {
         Skip to content
       </a>
       <div className="container-page header-inner">
-        <Link to="/" className="brand" onClick={close}>
-          <span>Northline</span>
-          <small>Capital Partners</small>
+        <Link to="/" className="brand" onClick={close} aria-label="Nevio Capital Partners — Home">
+          <img src="/brand/nevio-wordmark-light.svg" alt="Nevio Capital Partners" />
         </Link>
         <button
           className="menu-button"
@@ -29,7 +29,9 @@ export function Header() {
           aria-label="Primary navigation"
           className={open ? "nav-links is-open" : "nav-links"}
         >
-          <details className="nav-dropdown">
+          <details
+            className={pathname.startsWith("/services") ? "nav-dropdown active" : "nav-dropdown"}
+          >
             <summary>
               Services <ChevronDown aria-hidden="true" />
             </summary>
@@ -44,16 +46,16 @@ export function Header() {
               ))}
             </div>
           </details>
-          <Link to="/who-we-help" onClick={close}>
+          <Link to="/who-we-help" onClick={close} activeProps={{ className: "active" }}>
             Who We Help
           </Link>
-          <Link to="/process" onClick={close}>
+          <Link to="/process" onClick={close} activeProps={{ className: "active" }}>
             Process
           </Link>
-          <Link to="/about" onClick={close}>
+          <Link to="/about" onClick={close} activeProps={{ className: "active" }}>
             About
           </Link>
-          <Link to="/insights" onClick={close}>
+          <Link to="/insights" onClick={close} activeProps={{ className: "active" }}>
             Insights
           </Link>
           <Link to="/contact" className="btn btn-gold nav-cta" onClick={close}>

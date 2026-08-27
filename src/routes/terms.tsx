@@ -4,18 +4,18 @@ import { pageHead } from "@/components/seo";
 export const Route = createFileRoute("/terms")({
   head: () =>
     pageHead(
-      "Terms of Use | Northline Capital Partners",
-      "Terms governing use of the Northline Capital Partners website and its informational content.",
+      "Terms of Use | Nevio Capital Partners",
+      "Terms governing use of the Nevio Capital Partners website and its informational content.",
       "/terms",
     ),
   component: () => (
     <LegalPage
       title="Terms of Use"
-      intro="These draft terms govern use of the Northline website and require review before publication."
+      intro="These draft terms govern use of the Nevio website and require review before publication."
       sections={[
         {
           heading: "Informational purpose",
-          body: "The website provides general information about Northline and capital-raise business-advisory services. Content may be changed or withdrawn and is not a complete statement of any engagement scope.",
+          body: "The website provides general information about Nevio and capital-raise business-advisory services. Content may be changed or withdrawn and is not a complete statement of any engagement scope.",
         },
         {
           heading: "No professional advice",
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/terms")({
         },
         {
           heading: "No offer, solicitation, or funding guarantee",
-          body: "Website content is not an offer to sell or solicitation to buy securities. Northline does not guarantee capital, financing, introductions, closing, returns, timing, or any outcome.",
+          body: "Website content is not an offer to sell or solicitation to buy securities. Nevio does not guarantee capital, financing, introductions, closing, returns, timing, or any outcome.",
         },
         {
           heading: "Acceptable use",
@@ -31,11 +31,11 @@ export const Route = createFileRoute("/terms")({
         },
         {
           heading: "Intellectual property",
-          body: "Site content, design, branding, and original materials are owned by or licensed to Northline and may not be reproduced or exploited beyond lawful personal or internal business use without permission.",
+          body: "Site content, design, branding, and original materials are owned by or licensed to Nevio and may not be reproduced or exploited beyond lawful personal or internal business use without permission.",
         },
         {
           heading: "Third-party links",
-          body: "Third-party links do not imply endorsement. Northline is not responsible for third-party availability, content, security, or practices.",
+          body: "Third-party links do not imply endorsement. Nevio is not responsible for third-party availability, content, security, or practices.",
         },
         {
           heading: "Disclaimers and limitation",

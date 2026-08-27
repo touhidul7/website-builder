@@ -137,13 +137,16 @@ export function GlobalCTA() {
           <p className="eyebrow">Start a confidential conversation</p>
           <h2>Tell us what you are building—and what the right capital would make possible.</h2>
           <p>
-            Share the opportunity, the purpose of the raise, and your current stage. Northline will
+            Share the opportunity, the purpose of the raise, and your current stage. Nevio will
             review the information and respond to discuss potential fit.
           </p>
           <Link to="/contact" className="btn btn-gold">
             Discuss Your Raise <ArrowRight />
           </Link>
-          <small>Please do not send confidential records through the initial inquiry form.</small>
+          <small>
+            Please do not send confidential financial records or sensitive non-public information
+            until an appropriate process is agreed.
+          </small>
         </div>
       </div>
     </section>
@@ -166,24 +169,37 @@ export function ReadinessPanel() {
 }
 export function ServiceDetail({ service }: { service: Service }) {
   const Icon = service.icon;
+  const serviceIndex = services.findIndex((item) => item.slug === service.slug);
+  const related = [
+    services[(serviceIndex + 1) % services.length],
+    services[(serviceIndex + 2) % services.length],
+  ].filter((item): item is Service => Boolean(item));
+  const primaryCta =
+    service.slug === "investor-readiness"
+      ? { label: "Assess Your Readiness", to: "/capital-raise-readiness-checklist" as const }
+      : service.slug === "investor-materials"
+        ? { label: "Discuss Your Materials", to: "/contact" as const }
+        : service.slug === "transaction-coordination" || service.slug === "post-raise-planning"
+          ? { label: "Explore Fit", to: "/contact" as const }
+          : { label: "Discuss Your Raise", to: "/contact" as const };
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.title,
     description: service.short,
-    provider: { "@type": "Organization", name: "Northline Capital Partners" },
+    provider: { "@type": "Organization", name: "Nevio Capital Partners" },
   };
   return (
     <>
       <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: service.title }]} />
       <PageHero
-        eyebrow="Northline services"
-        title={service.title}
+        eyebrow="Nevio services"
+        title={service.headline}
         intro={service.short}
         actions={
           <>
-            <Link to="/contact" className="btn btn-gold">
-              Discuss Your Raise
+            <Link to={primaryCta.to} className="btn btn-gold">
+              {primaryCta.label}
             </Link>
             <Link to="/process" className="btn btn-outline">
               See How We Work
@@ -193,32 +209,88 @@ export function ServiceDetail({ service }: { service: Service }) {
       />
       <section className="section">
         <div className="container-page two-col">
+          <SectionHeading
+            eyebrow="When this service helps"
+            title="Bring structure to the decisions that shape the raise."
+          />
+          <Checklist items={service.suitable} />
+        </div>
+      </section>
+      <section className="section surface">
+        <div className="container-page two-col">
           <div>
             <div className="icon-box large">
               <Icon />
             </div>
             <SectionHeading eyebrow="The objective" title={service.outcome} />
             <p className="body-large">
-              Northline applies a disciplined advisory process to clarify decisions, strengthen the
+              Nevio applies a disciplined advisory process to clarify decisions, strengthen the
               supporting case, and keep the work moving with appropriate specialists involved where
               required.
             </p>
           </div>
           <div className="card elevated">
-            <h2>Core deliverables</h2>
+            <h2>What the work can include</h2>
             <Checklist items={service.deliverables} />
+            {service.slug === "investor-materials" && (
+              <p>
+                Legal offering documents must be prepared or reviewed by qualified legal
+                professionals.
+              </p>
+            )}
+            {service.slug === "transaction-coordination" && (
+              <p>
+                Nevio coordinates with—but does not replace—legal, tax, accounting, or licensed
+                securities professionals.
+              </p>
+            )}
           </div>
-        </div>
-      </section>
-      <section className="section surface">
-        <div className="container-page two-col">
-          <SectionHeading eyebrow="When it fits" title="This service may be useful when…" />
-          <Checklist items={service.suitable} />
         </div>
       </section>
       <section className="section">
         <div className="container-page">
-          <ReadinessPanel />
+          <SectionHeading
+            eyebrow="Connected support"
+            title="How it connects to the wider raise"
+            intro="Capital strategy, readiness, materials, process management, diligence, and post-raise planning work best as one connected system."
+          />
+          <div className="card-grid three">
+            {related.map((item) => (
+              <ServiceCard key={item.slug} service={item} />
+            ))}
+            <article className="card">
+              <h3>See the complete service system</h3>
+              <p>Understand all six areas of support and where an engagement may begin.</p>
+              <Link to="/services" className="text-link">
+                Explore all services <ArrowRight />
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section surface">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Service questions"
+            title="Clarify the scope before the work begins."
+          />
+          <div className="faq-list">
+            <details>
+              <summary>Does this service guarantee funding?</summary>
+              <p>
+                No. Nevio provides strategy and process support. Financing outcomes depend on the
+                opportunity, market conditions, diligence, decision processes, and other factors.
+              </p>
+            </details>
+            <details>
+              <summary>How is the engagement scoped?</summary>
+              <p>
+                The first conversation identifies the current stage, priorities, gaps, and
+                appropriate work plan. Scope is tailored to the opportunity rather than applied as a
+                fixed package.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
       <script
