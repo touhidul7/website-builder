@@ -11,12 +11,29 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as BusinessOwnersRouteImport } from './routes/business-owners'
+import { Route as CapitalRaiseReadinessChecklistRouteImport } from './routes/capital-raise-readiness-checklist'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as InvestmentApproachRouteImport } from './routes/investment-approach'
-import { Route as InvestmentCriteriaRouteImport } from './routes/investment-criteria'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ProcessRouteImport } from './routes/process'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsDataRoomChecklistRouteImport } from './routes/insights.data-room-checklist'
+import { Route as InsightsPreparingForACapitalRaiseRouteImport } from './routes/insights.preparing-for-a-capital-raise'
+import { Route as InsightsWhatInvestorsReviewRouteImport } from './routes/insights.what-investors-review'
+import { Route as ResourcesReadinessChecklistRouteImport } from './routes/resources.readiness-checklist'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesCapitalStrategyRouteImport } from './routes/services.capital-strategy'
+import { Route as ServicesInvestorMaterialsRouteImport } from './routes/services.investor-materials'
+import { Route as ServicesInvestorReadinessRouteImport } from './routes/services.investor-readiness'
+import { Route as ServicesPostRaisePlanningRouteImport } from './routes/services.post-raise-planning'
+import { Route as ServicesRaiseProcessSupportRouteImport } from './routes/services.raise-process-support'
+import { Route as ServicesTransactionCoordinationRouteImport } from './routes/services.transaction-coordination'
+import { Route as WhoWeHelpIndexRouteImport } from './routes/who-we-help.index'
+import { Route as WhoWeHelpCompaniesRouteImport } from './routes/who-we-help.companies'
+import { Route as WhoWeHelpIndividualsRouteImport } from './routes/who-we-help.individuals'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,24 +45,25 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BusinessOwnersRoute = BusinessOwnersRouteImport.update({
-  id: '/business-owners',
-  path: '/business-owners',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const CapitalRaiseReadinessChecklistRoute =
+  CapitalRaiseReadinessChecklistRouteImport.update({
+    id: '/capital-raise-readiness-checklist',
+    path: '/capital-raise-readiness-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InvestmentApproachRoute = InvestmentApproachRouteImport.update({
-  id: '/investment-approach',
-  path: '/investment-approach',
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InvestmentCriteriaRoute = InvestmentCriteriaRouteImport.update({
-  id: '/investment-criteria',
-  path: '/investment-criteria',
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -53,85 +71,298 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsDataRoomChecklistRoute =
+  InsightsDataRoomChecklistRouteImport.update({
+    id: '/insights/data-room-checklist',
+    path: '/insights/data-room-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InsightsPreparingForACapitalRaiseRoute =
+  InsightsPreparingForACapitalRaiseRouteImport.update({
+    id: '/insights/preparing-for-a-capital-raise',
+    path: '/insights/preparing-for-a-capital-raise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InsightsWhatInvestorsReviewRoute =
+  InsightsWhatInvestorsReviewRouteImport.update({
+    id: '/insights/what-investors-review',
+    path: '/insights/what-investors-review',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesReadinessChecklistRoute =
+  ResourcesReadinessChecklistRouteImport.update({
+    id: '/resources/readiness-checklist',
+    path: '/resources/readiness-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCapitalStrategyRoute = ServicesCapitalStrategyRouteImport.update({
+  id: '/services/capital-strategy',
+  path: '/services/capital-strategy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesInvestorMaterialsRoute =
+  ServicesInvestorMaterialsRouteImport.update({
+    id: '/services/investor-materials',
+    path: '/services/investor-materials',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesInvestorReadinessRoute =
+  ServicesInvestorReadinessRouteImport.update({
+    id: '/services/investor-readiness',
+    path: '/services/investor-readiness',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesPostRaisePlanningRoute =
+  ServicesPostRaisePlanningRouteImport.update({
+    id: '/services/post-raise-planning',
+    path: '/services/post-raise-planning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesRaiseProcessSupportRoute =
+  ServicesRaiseProcessSupportRouteImport.update({
+    id: '/services/raise-process-support',
+    path: '/services/raise-process-support',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesTransactionCoordinationRoute =
+  ServicesTransactionCoordinationRouteImport.update({
+    id: '/services/transaction-coordination',
+    path: '/services/transaction-coordination',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhoWeHelpIndexRoute = WhoWeHelpIndexRouteImport.update({
+  id: '/who-we-help/',
+  path: '/who-we-help/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpCompaniesRoute = WhoWeHelpCompaniesRouteImport.update({
+  id: '/who-we-help/companies',
+  path: '/who-we-help/companies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhoWeHelpIndividualsRoute = WhoWeHelpIndividualsRouteImport.update({
+  id: '/who-we-help/individuals',
+  path: '/who-we-help/individuals',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/business-owners': typeof BusinessOwnersRoute
+  '/capital-raise-readiness-checklist': typeof CapitalRaiseReadinessChecklistRoute
   '/contact': typeof ContactRoute
-  '/investment-approach': typeof InvestmentApproachRoute
-  '/investment-criteria': typeof InvestmentCriteriaRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
+  '/insights/data-room-checklist': typeof InsightsDataRoomChecklistRoute
+  '/insights/preparing-for-a-capital-raise': typeof InsightsPreparingForACapitalRaiseRoute
+  '/insights/what-investors-review': typeof InsightsWhatInvestorsReviewRoute
+  '/resources/readiness-checklist': typeof ResourcesReadinessChecklistRoute
+  '/services/capital-strategy': typeof ServicesCapitalStrategyRoute
+  '/services/investor-materials': typeof ServicesInvestorMaterialsRoute
+  '/services/investor-readiness': typeof ServicesInvestorReadinessRoute
+  '/services/post-raise-planning': typeof ServicesPostRaisePlanningRoute
+  '/services/raise-process-support': typeof ServicesRaiseProcessSupportRoute
+  '/services/transaction-coordination': typeof ServicesTransactionCoordinationRoute
+  '/who-we-help/companies': typeof WhoWeHelpCompaniesRoute
+  '/who-we-help/individuals': typeof WhoWeHelpIndividualsRoute
+  '/insights/': typeof InsightsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/who-we-help/': typeof WhoWeHelpIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/business-owners': typeof BusinessOwnersRoute
+  '/capital-raise-readiness-checklist': typeof CapitalRaiseReadinessChecklistRoute
   '/contact': typeof ContactRoute
-  '/investment-approach': typeof InvestmentApproachRoute
-  '/investment-criteria': typeof InvestmentCriteriaRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
+  '/insights/data-room-checklist': typeof InsightsDataRoomChecklistRoute
+  '/insights/preparing-for-a-capital-raise': typeof InsightsPreparingForACapitalRaiseRoute
+  '/insights/what-investors-review': typeof InsightsWhatInvestorsReviewRoute
+  '/resources/readiness-checklist': typeof ResourcesReadinessChecklistRoute
+  '/services/capital-strategy': typeof ServicesCapitalStrategyRoute
+  '/services/investor-materials': typeof ServicesInvestorMaterialsRoute
+  '/services/investor-readiness': typeof ServicesInvestorReadinessRoute
+  '/services/post-raise-planning': typeof ServicesPostRaisePlanningRoute
+  '/services/raise-process-support': typeof ServicesRaiseProcessSupportRoute
+  '/services/transaction-coordination': typeof ServicesTransactionCoordinationRoute
+  '/who-we-help/companies': typeof WhoWeHelpCompaniesRoute
+  '/who-we-help/individuals': typeof WhoWeHelpIndividualsRoute
+  '/insights': typeof InsightsIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/who-we-help': typeof WhoWeHelpIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/business-owners': typeof BusinessOwnersRoute
+  '/capital-raise-readiness-checklist': typeof CapitalRaiseReadinessChecklistRoute
   '/contact': typeof ContactRoute
-  '/investment-approach': typeof InvestmentApproachRoute
-  '/investment-criteria': typeof InvestmentCriteriaRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faqs': typeof FaqsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
+  '/insights/data-room-checklist': typeof InsightsDataRoomChecklistRoute
+  '/insights/preparing-for-a-capital-raise': typeof InsightsPreparingForACapitalRaiseRoute
+  '/insights/what-investors-review': typeof InsightsWhatInvestorsReviewRoute
+  '/resources/readiness-checklist': typeof ResourcesReadinessChecklistRoute
+  '/services/capital-strategy': typeof ServicesCapitalStrategyRoute
+  '/services/investor-materials': typeof ServicesInvestorMaterialsRoute
+  '/services/investor-readiness': typeof ServicesInvestorReadinessRoute
+  '/services/post-raise-planning': typeof ServicesPostRaisePlanningRoute
+  '/services/raise-process-support': typeof ServicesRaiseProcessSupportRoute
+  '/services/transaction-coordination': typeof ServicesTransactionCoordinationRoute
+  '/who-we-help/companies': typeof WhoWeHelpCompaniesRoute
+  '/who-we-help/individuals': typeof WhoWeHelpIndividualsRoute
+  '/insights/': typeof InsightsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/who-we-help/': typeof WhoWeHelpIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/business-owners'
+    | '/capital-raise-readiness-checklist'
     | '/contact'
-    | '/investment-approach'
-    | '/investment-criteria'
+    | '/disclaimer'
+    | '/faqs'
     | '/privacy-policy'
+    | '/process'
     | '/terms'
+    | '/thank-you'
+    | '/insights/data-room-checklist'
+    | '/insights/preparing-for-a-capital-raise'
+    | '/insights/what-investors-review'
+    | '/resources/readiness-checklist'
+    | '/services/capital-strategy'
+    | '/services/investor-materials'
+    | '/services/investor-readiness'
+    | '/services/post-raise-planning'
+    | '/services/raise-process-support'
+    | '/services/transaction-coordination'
+    | '/who-we-help/companies'
+    | '/who-we-help/individuals'
+    | '/insights/'
+    | '/services/'
+    | '/who-we-help/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/business-owners'
+    | '/capital-raise-readiness-checklist'
     | '/contact'
-    | '/investment-approach'
-    | '/investment-criteria'
+    | '/disclaimer'
+    | '/faqs'
     | '/privacy-policy'
+    | '/process'
     | '/terms'
+    | '/thank-you'
+    | '/insights/data-room-checklist'
+    | '/insights/preparing-for-a-capital-raise'
+    | '/insights/what-investors-review'
+    | '/resources/readiness-checklist'
+    | '/services/capital-strategy'
+    | '/services/investor-materials'
+    | '/services/investor-readiness'
+    | '/services/post-raise-planning'
+    | '/services/raise-process-support'
+    | '/services/transaction-coordination'
+    | '/who-we-help/companies'
+    | '/who-we-help/individuals'
+    | '/insights'
+    | '/services'
+    | '/who-we-help'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/business-owners'
+    | '/capital-raise-readiness-checklist'
     | '/contact'
-    | '/investment-approach'
-    | '/investment-criteria'
+    | '/disclaimer'
+    | '/faqs'
     | '/privacy-policy'
+    | '/process'
     | '/terms'
+    | '/thank-you'
+    | '/insights/data-room-checklist'
+    | '/insights/preparing-for-a-capital-raise'
+    | '/insights/what-investors-review'
+    | '/resources/readiness-checklist'
+    | '/services/capital-strategy'
+    | '/services/investor-materials'
+    | '/services/investor-readiness'
+    | '/services/post-raise-planning'
+    | '/services/raise-process-support'
+    | '/services/transaction-coordination'
+    | '/who-we-help/companies'
+    | '/who-we-help/individuals'
+    | '/insights/'
+    | '/services/'
+    | '/who-we-help/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BusinessOwnersRoute: typeof BusinessOwnersRoute
+  CapitalRaiseReadinessChecklistRoute: typeof CapitalRaiseReadinessChecklistRoute
   ContactRoute: typeof ContactRoute
-  InvestmentApproachRoute: typeof InvestmentApproachRoute
-  InvestmentCriteriaRoute: typeof InvestmentCriteriaRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FaqsRoute: typeof FaqsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProcessRoute: typeof ProcessRoute
   TermsRoute: typeof TermsRoute
+  ThankYouRoute: typeof ThankYouRoute
+  InsightsDataRoomChecklistRoute: typeof InsightsDataRoomChecklistRoute
+  InsightsPreparingForACapitalRaiseRoute: typeof InsightsPreparingForACapitalRaiseRoute
+  InsightsWhatInvestorsReviewRoute: typeof InsightsWhatInvestorsReviewRoute
+  ResourcesReadinessChecklistRoute: typeof ResourcesReadinessChecklistRoute
+  ServicesCapitalStrategyRoute: typeof ServicesCapitalStrategyRoute
+  ServicesInvestorMaterialsRoute: typeof ServicesInvestorMaterialsRoute
+  ServicesInvestorReadinessRoute: typeof ServicesInvestorReadinessRoute
+  ServicesPostRaisePlanningRoute: typeof ServicesPostRaisePlanningRoute
+  ServicesRaiseProcessSupportRoute: typeof ServicesRaiseProcessSupportRoute
+  ServicesTransactionCoordinationRoute: typeof ServicesTransactionCoordinationRoute
+  WhoWeHelpCompaniesRoute: typeof WhoWeHelpCompaniesRoute
+  WhoWeHelpIndividualsRoute: typeof WhoWeHelpIndividualsRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+  WhoWeHelpIndexRoute: typeof WhoWeHelpIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -150,11 +381,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/business-owners': {
-      id: '/business-owners'
-      path: '/business-owners'
-      fullPath: '/business-owners'
-      preLoaderRoute: typeof BusinessOwnersRouteImport
+    '/capital-raise-readiness-checklist': {
+      id: '/capital-raise-readiness-checklist'
+      path: '/capital-raise-readiness-checklist'
+      fullPath: '/capital-raise-readiness-checklist'
+      preLoaderRoute: typeof CapitalRaiseReadinessChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -164,18 +395,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/investment-approach': {
-      id: '/investment-approach'
-      path: '/investment-approach'
-      fullPath: '/investment-approach'
-      preLoaderRoute: typeof InvestmentApproachRouteImport
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/investment-criteria': {
-      id: '/investment-criteria'
-      path: '/investment-criteria'
-      fullPath: '/investment-criteria'
-      preLoaderRoute: typeof InvestmentCriteriaRouteImport
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -185,11 +416,130 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/data-room-checklist': {
+      id: '/insights/data-room-checklist'
+      path: '/insights/data-room-checklist'
+      fullPath: '/insights/data-room-checklist'
+      preLoaderRoute: typeof InsightsDataRoomChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/preparing-for-a-capital-raise': {
+      id: '/insights/preparing-for-a-capital-raise'
+      path: '/insights/preparing-for-a-capital-raise'
+      fullPath: '/insights/preparing-for-a-capital-raise'
+      preLoaderRoute: typeof InsightsPreparingForACapitalRaiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/what-investors-review': {
+      id: '/insights/what-investors-review'
+      path: '/insights/what-investors-review'
+      fullPath: '/insights/what-investors-review'
+      preLoaderRoute: typeof InsightsWhatInvestorsReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/readiness-checklist': {
+      id: '/resources/readiness-checklist'
+      path: '/resources/readiness-checklist'
+      fullPath: '/resources/readiness-checklist'
+      preLoaderRoute: typeof ResourcesReadinessChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/capital-strategy': {
+      id: '/services/capital-strategy'
+      path: '/services/capital-strategy'
+      fullPath: '/services/capital-strategy'
+      preLoaderRoute: typeof ServicesCapitalStrategyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/investor-materials': {
+      id: '/services/investor-materials'
+      path: '/services/investor-materials'
+      fullPath: '/services/investor-materials'
+      preLoaderRoute: typeof ServicesInvestorMaterialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/investor-readiness': {
+      id: '/services/investor-readiness'
+      path: '/services/investor-readiness'
+      fullPath: '/services/investor-readiness'
+      preLoaderRoute: typeof ServicesInvestorReadinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/post-raise-planning': {
+      id: '/services/post-raise-planning'
+      path: '/services/post-raise-planning'
+      fullPath: '/services/post-raise-planning'
+      preLoaderRoute: typeof ServicesPostRaisePlanningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/raise-process-support': {
+      id: '/services/raise-process-support'
+      path: '/services/raise-process-support'
+      fullPath: '/services/raise-process-support'
+      preLoaderRoute: typeof ServicesRaiseProcessSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/transaction-coordination': {
+      id: '/services/transaction-coordination'
+      path: '/services/transaction-coordination'
+      fullPath: '/services/transaction-coordination'
+      preLoaderRoute: typeof ServicesTransactionCoordinationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/': {
+      id: '/who-we-help/'
+      path: '/who-we-help'
+      fullPath: '/who-we-help/'
+      preLoaderRoute: typeof WhoWeHelpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/companies': {
+      id: '/who-we-help/companies'
+      path: '/who-we-help/companies'
+      fullPath: '/who-we-help/companies'
+      preLoaderRoute: typeof WhoWeHelpCompaniesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/who-we-help/individuals': {
+      id: '/who-we-help/individuals'
+      path: '/who-we-help/individuals'
+      fullPath: '/who-we-help/individuals'
+      preLoaderRoute: typeof WhoWeHelpIndividualsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -198,12 +548,30 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BusinessOwnersRoute: BusinessOwnersRoute,
+  CapitalRaiseReadinessChecklistRoute: CapitalRaiseReadinessChecklistRoute,
   ContactRoute: ContactRoute,
-  InvestmentApproachRoute: InvestmentApproachRoute,
-  InvestmentCriteriaRoute: InvestmentCriteriaRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FaqsRoute: FaqsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProcessRoute: ProcessRoute,
   TermsRoute: TermsRoute,
+  ThankYouRoute: ThankYouRoute,
+  InsightsDataRoomChecklistRoute: InsightsDataRoomChecklistRoute,
+  InsightsPreparingForACapitalRaiseRoute:
+    InsightsPreparingForACapitalRaiseRoute,
+  InsightsWhatInvestorsReviewRoute: InsightsWhatInvestorsReviewRoute,
+  ResourcesReadinessChecklistRoute: ResourcesReadinessChecklistRoute,
+  ServicesCapitalStrategyRoute: ServicesCapitalStrategyRoute,
+  ServicesInvestorMaterialsRoute: ServicesInvestorMaterialsRoute,
+  ServicesInvestorReadinessRoute: ServicesInvestorReadinessRoute,
+  ServicesPostRaisePlanningRoute: ServicesPostRaisePlanningRoute,
+  ServicesRaiseProcessSupportRoute: ServicesRaiseProcessSupportRoute,
+  ServicesTransactionCoordinationRoute: ServicesTransactionCoordinationRoute,
+  WhoWeHelpCompaniesRoute: WhoWeHelpCompaniesRoute,
+  WhoWeHelpIndividualsRoute: WhoWeHelpIndividualsRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+  WhoWeHelpIndexRoute: WhoWeHelpIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

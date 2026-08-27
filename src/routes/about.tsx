@@ -1,11 +1,56 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Scale, ShieldCheck, Waypoints } from "lucide-react";
-import { ConfirmNote, CtaBand, IconCard, PageHero, SectionHeading } from "@/components/site/ui";
-
-export const Route = createFileRoute("/about")({ head: () => ({ meta: [{ title: "About | Northline Capital Partners" }, { name: "description", content: "Learn about Northline Capital Partners' purpose and partnership principles. Verified team information is pending approval." }] }), component: About });
-
-function About() { return <><PageHero eyebrow="About Northline" title="Purposeful Capital. Practical Stewardship." intro="[CONFIRM: approved one-sentence description of Northline's purpose, investment model, audience, and geography.]"><Link to="/contact" className="btn-base btn-primary">Start a Confidential Conversation</Link></PageHero>
-  <section className="section-y"><div className="container-page grid gap-12 lg:grid-cols-[1fr_1.1fr]"><SectionHeading eyebrow="Our purpose" title="A Long-Term Partner for Enduring Businesses" intro="This draft positioning reflects the SOP's assumed model and must be reconciled with Northline's approved business description before publication." /><div><ConfirmNote>[CONFIRM: approved origin, purpose, ownership model, investment mandate, and any claims about experience.]</ConfirmNote><p className="mt-7 leading-8 text-muted-foreground">Northline's story should be concise, factual, and useful to owners and advisors. It should explain why the firm exists and how that purpose shapes its decisions without relying on unverified scale, performance, or tenure claims.</p></div></div></section>
-  <section className="section-y bg-surface"><div className="container-page"><SectionHeading eyebrow="Principles" title="How Northline Intends to Show Up" /><div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"><IconCard icon={ShieldCheck} title="Discretion" body="Treat sensitive conversations with appropriate care." /><IconCard icon={Scale} title="Alignment" body="Make priorities, tradeoffs, and expectations clear." /><IconCard icon={Compass} title="Judgment" body="Prefer thoughtful decisions over unnecessary speed." /><IconCard icon={Waypoints} title="Stewardship" body="Consider the long-term health of the business and its relationships." /></div></div></section>
-  <section className="section-y"><div className="container-page"><SectionHeading eyebrow="Team" title="Verified People, Not Placeholder Biographies" intro="The team section is intentionally withheld until names, titles, biographies, and headshots are approved for public use." /><div className="mt-8 max-w-3xl"><ConfirmNote>[CONFIRM: verified team details and approved photography. Do not publish fictional profiles.]</ConfirmNote></div></div></section><CtaBand />
-  </>; }
+import { Breadcrumbs, GlobalCTA, PageHero, SectionHeading } from "@/components/site/ui";
+import { pageHead } from "@/components/seo";
+export const Route = createFileRoute("/about")({
+  head: () =>
+    pageHead(
+      "About Northline Capital Partners",
+      "Northline helps align the business case, supporting information, communication, and process behind a capital raise.",
+      "/about",
+    ),
+  component: Page,
+});
+function Page() {
+  return (
+    <>
+      <Breadcrumbs items={[{ label: "About" }]} />
+      <PageHero
+        eyebrow="About Northline"
+        title="Serious capital conversations begin with aligned preparation."
+        intro="Northline Capital Partners was built around a simple belief: a capital raise is strongest when the business case, supporting information, communication, and process are aligned before outreach begins."
+        actions={
+          <Link to="/contact" className="btn btn-gold">
+            Discuss Your Raise
+          </Link>
+        }
+      />
+      <section className="section">
+        <div className="container-page two-col">
+          <SectionHeading
+            eyebrow="Our purpose"
+            title="Help leaders prepare a clearer, more credible path to capital."
+            intro="Northline brings structure to decisions and workstreams that can otherwise become fragmented across leadership, finance, materials, advisers, and outreach."
+          />
+          <div className="card elevated">
+            <h2>What guides the work</h2>
+            <p className="body-large">
+              Clarity about the purpose of capital. Credible information and assumptions. Consistent
+              communication. Appropriate professional boundaries. Disciplined follow-through and
+              honest checkpoints.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section surface">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Team information"
+            title="People and credentials will be published only when approved."
+            intro="The roadmap intentionally avoids invented biographies, credentials, locations, transaction history, or regulated-status claims. Verified team information can be added through the site's data-driven structure when available."
+          />
+        </div>
+      </section>
+      <GlobalCTA />
+    </>
+  );
+}

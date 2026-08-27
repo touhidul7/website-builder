@@ -1,10 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { EyeOff, MessageSquareText, ShieldCheck } from "lucide-react";
-import { InquiryForm } from "@/components/site/InquiryForm";
-import { ConfirmNote, IconCard, PageHero, SectionHeading } from "@/components/site/ui";
-
-export const Route = createFileRoute("/contact")({ head: () => ({ meta: [{ title: "Contact | Northline Capital Partners" }, { name: "description", content: "Start a confidential conversation with Northline Capital Partners using a short business inquiry form." }] }), component: Contact });
-
-function Contact() { return <><PageHero eyebrow="Contact" title="Start a Confidential Conversation" intro="Share a brief, non-sensitive overview so Northline can understand the context and determine an appropriate next step." />
-  <section className="section-y"><div className="container-page grid gap-12 lg:grid-cols-[0.78fr_1.22fr]"><div><SectionHeading eyebrow="A measured first step" title="Clarity Without Unnecessary Exposure" /><div className="mt-8 grid gap-4"><IconCard icon={EyeOff} title="Keep it high level" body="Do not upload highly sensitive documents or non-public financial information." /><IconCard icon={ShieldCheck} title="Reviewed by Northline" body="The inquiry should route to an internal recipient approved before launch." /><IconCard icon={MessageSquareText} title="Clear follow-up" body="[CONFIRM: approved response-time promise and preferred follow-up process.]" /></div><div className="mt-6"><ConfirmNote>[CONFIRM: official email, phone, office or service geography, and internal form recipient.]</ConfirmNote></div></div><InquiryForm /></div></section>
-  </>; }
+import { InquiryForm } from "@/components/site/LeadForms";
+import { PageHero } from "@/components/site/ui";
+import { pageHead } from "@/components/seo";
+export const Route = createFileRoute("/contact")({
+  head: () =>
+    pageHead(
+      "Discuss Your Capital Raise | Northline Capital Partners",
+      "Share a brief overview of your opportunity, raise purpose, stage, amount range, and timing to discuss potential fit with Northline.",
+      "/contact",
+    ),
+  component: Page,
+});
+function Page() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Discuss your raise"
+        title="Start a confidential conversation."
+        intro="Tell us what you are building, why you are raising, and where the opportunity stands today. Northline will review the information and respond to discuss potential fit."
+      />
+      <section className="section">
+        <div className="container-page two-col">
+          <div>
+            <h2>A concise overview is enough to begin.</h2>
+            <p className="body-large">
+              Share the purpose, approximate amount, stage, and timing. Do not send sensitive or
+              confidential records until an appropriate process has been agreed.
+            </p>
+          </div>
+          <InquiryForm />
+        </div>
+      </section>
+    </>
+  );
+}

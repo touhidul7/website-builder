@@ -1,41 +1,66 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
-
-const nav = [
-  { to: "/investment-approach", label: "Investment Approach" },
-  { to: "/investment-criteria", label: "Investment Criteria" },
-  { to: "/business-owners", label: "For Business Owners" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
-] as const;
-
+import { services } from "@/content/site";
 export function Header() {
   const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-primary/95 text-primary-foreground backdrop-blur">
-      <div className="container-page flex min-h-20 items-center justify-between gap-6 py-3">
-        <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="h-9 w-px bg-accent" aria-hidden="true" />
-          <span className="leading-none">
-            <span className="block font-serif text-lg font-semibold tracking-[0.08em] text-white">NORTHLINE</span>
-            <span className="mt-1 block text-[0.62rem] font-semibold tracking-[0.2em] text-white/60">CAPITAL PARTNERS</span>
-          </span>
+    <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <div className="container-page header-inner">
+        <Link to="/" className="brand" onClick={close}>
+          <span>Northline</span>
+          <small>Capital Partners</small>
         </Link>
-        <nav className="hidden items-center gap-6 xl:flex" aria-label="Primary navigation">
-          {nav.map((item) => <Link key={item.to} to={item.to} className="text-sm font-medium text-white/70 transition-colors hover:text-white" activeProps={{ className: "text-white" }}>{item.label}</Link>)}
+        <button
+          className="menu-button"
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+          <span className="sr-only">Menu</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          className={open ? "nav-links is-open" : "nav-links"}
+        >
+          <details className="nav-dropdown">
+            <summary>
+              Services <ChevronDown aria-hidden="true" />
+            </summary>
+            <div className="nav-dropdown-panel">
+              <Link to="/services" onClick={close}>
+                All Services
+              </Link>
+              {services.map((s) => (
+                <Link key={s.slug} to={`/services/${s.slug}`} onClick={close}>
+                  {s.title}
+                </Link>
+              ))}
+            </div>
+          </details>
+          <Link to="/who-we-help" onClick={close}>
+            Who We Help
+          </Link>
+          <Link to="/process" onClick={close}>
+            Process
+          </Link>
+          <Link to="/about" onClick={close}>
+            About
+          </Link>
+          <Link to="/insights" onClick={close}>
+            Insights
+          </Link>
+          <Link to="/contact" className="btn btn-gold nav-cta" onClick={close}>
+            Discuss Your Raise
+          </Link>
         </nav>
-        <div className="flex items-center gap-3">
-          <Link to="/contact" className="btn-base btn-primary hidden sm:inline-flex">Start a Confidential Conversation</Link>
-          <button type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 text-white xl:hidden">
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
       </div>
-      {open && <nav className="border-t border-white/10 bg-primary xl:hidden" aria-label="Mobile navigation"><div className="container-page flex flex-col gap-1 py-4">
-        {nav.map((item) => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/75 hover:bg-white/5 hover:text-white">{item.label}</Link>)}
-        <Link to="/contact" onClick={() => setOpen(false)} className="btn-base btn-primary mt-3 w-full sm:hidden">Start a Confidential Conversation</Link>
-      </div></nav>}
     </header>
   );
 }
