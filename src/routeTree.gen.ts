@@ -10,32 +10,27 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BookRouteImport } from './routes/book'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BusinessOwnersRouteImport } from './routes/business-owners'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FaqsRouteImport } from './routes/faqs'
-import { Route as FreeLearningPlanRouteImport } from './routes/free-learning-plan'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
-import { Route as OurTutorsRouteImport } from './routes/our-tutors'
-import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as InvestmentApproachRouteImport } from './routes/investment-approach'
+import { Route as InvestmentCriteriaRouteImport } from './routes/investment-criteria'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as LocationsIndexRouteImport } from './routes/locations.index'
-import { Route as LocationsCityRouteImport } from './routes/locations.$city'
-import { Route as ProgramsIndexRouteImport } from './routes/programs.index'
-import { Route as ProgramsGrades25RouteImport } from './routes/programs.grades-2-5'
-import { Route as ProgramsGrades610RouteImport } from './routes/programs.grades-6-10'
-import { Route as ProgramsGrades912RouteImport } from './routes/programs.grades-9-12'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BookRoute = BookRouteImport.update({
-  id: '/book',
-  path: '/book',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessOwnersRoute = BusinessOwnersRouteImport.update({
+  id: '/business-owners',
+  path: '/business-owners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -43,29 +38,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FaqsRoute = FaqsRouteImport.update({
-  id: '/faqs',
-  path: '/faqs',
+const InvestmentApproachRoute = InvestmentApproachRouteImport.update({
+  id: '/investment-approach',
+  path: '/investment-approach',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FreeLearningPlanRoute = FreeLearningPlanRouteImport.update({
-  id: '/free-learning-plan',
-  path: '/free-learning-plan',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OurTutorsRoute = OurTutorsRouteImport.update({
-  id: '/our-tutors',
-  path: '/our-tutors',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
+const InvestmentCriteriaRoute = InvestmentCriteriaRouteImport.update({
+  id: '/investment-criteria',
+  path: '/investment-criteria',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -73,195 +53,85 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LocationsIndexRoute = LocationsIndexRouteImport.update({
-  id: '/locations/',
-  path: '/locations/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LocationsCityRoute = LocationsCityRouteImport.update({
-  id: '/locations/$city',
-  path: '/locations/$city',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
-  id: '/programs/',
-  path: '/programs/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsGrades25Route = ProgramsGrades25RouteImport.update({
-  id: '/programs/grades-2-5',
-  path: '/programs/grades-2-5',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsGrades610Route = ProgramsGrades610RouteImport.update({
-  id: '/programs/grades-6-10',
-  path: '/programs/grades-6-10',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsGrades912Route = ProgramsGrades912RouteImport.update({
-  id: '/programs/grades-9-12',
-  path: '/programs/grades-9-12',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
+  '/about': typeof AboutRoute
+  '/business-owners': typeof BusinessOwnersRoute
   '/contact': typeof ContactRoute
-  '/faqs': typeof FaqsRoute
-  '/free-learning-plan': typeof FreeLearningPlanRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/our-tutors': typeof OurTutorsRoute
-  '/pricing': typeof PricingRoute
+  '/investment-approach': typeof InvestmentApproachRoute
+  '/investment-criteria': typeof InvestmentCriteriaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
-  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
-  '/locations/$city': typeof LocationsCityRoute
-  '/programs/grades-2-5': typeof ProgramsGrades25Route
-  '/programs/grades-6-10': typeof ProgramsGrades610Route
-  '/programs/grades-9-12': typeof ProgramsGrades912Route
-  '/locations/': typeof LocationsIndexRoute
-  '/programs/': typeof ProgramsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
+  '/about': typeof AboutRoute
+  '/business-owners': typeof BusinessOwnersRoute
   '/contact': typeof ContactRoute
-  '/faqs': typeof FaqsRoute
-  '/free-learning-plan': typeof FreeLearningPlanRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/our-tutors': typeof OurTutorsRoute
-  '/pricing': typeof PricingRoute
+  '/investment-approach': typeof InvestmentApproachRoute
+  '/investment-criteria': typeof InvestmentCriteriaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
-  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
-  '/locations/$city': typeof LocationsCityRoute
-  '/programs/grades-2-5': typeof ProgramsGrades25Route
-  '/programs/grades-6-10': typeof ProgramsGrades610Route
-  '/programs/grades-9-12': typeof ProgramsGrades912Route
-  '/locations': typeof LocationsIndexRoute
-  '/programs': typeof ProgramsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
+  '/about': typeof AboutRoute
+  '/business-owners': typeof BusinessOwnersRoute
   '/contact': typeof ContactRoute
-  '/faqs': typeof FaqsRoute
-  '/free-learning-plan': typeof FreeLearningPlanRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/our-tutors': typeof OurTutorsRoute
-  '/pricing': typeof PricingRoute
+  '/investment-approach': typeof InvestmentApproachRoute
+  '/investment-criteria': typeof InvestmentCriteriaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
-  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
-  '/locations/$city': typeof LocationsCityRoute
-  '/programs/grades-2-5': typeof ProgramsGrades25Route
-  '/programs/grades-6-10': typeof ProgramsGrades610Route
-  '/programs/grades-9-12': typeof ProgramsGrades912Route
-  '/locations/': typeof LocationsIndexRoute
-  '/programs/': typeof ProgramsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/book'
+    | '/about'
+    | '/business-owners'
     | '/contact'
-    | '/faqs'
-    | '/free-learning-plan'
-    | '/how-it-works'
-    | '/our-tutors'
-    | '/pricing'
+    | '/investment-approach'
+    | '/investment-criteria'
     | '/privacy-policy'
-    | '/resources'
-    | '/reviews'
     | '/terms'
-    | '/locations/$city'
-    | '/programs/grades-2-5'
-    | '/programs/grades-6-10'
-    | '/programs/grades-9-12'
-    | '/locations/'
-    | '/programs/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/book'
+    | '/about'
+    | '/business-owners'
     | '/contact'
-    | '/faqs'
-    | '/free-learning-plan'
-    | '/how-it-works'
-    | '/our-tutors'
-    | '/pricing'
+    | '/investment-approach'
+    | '/investment-criteria'
     | '/privacy-policy'
-    | '/resources'
-    | '/reviews'
     | '/terms'
-    | '/locations/$city'
-    | '/programs/grades-2-5'
-    | '/programs/grades-6-10'
-    | '/programs/grades-9-12'
-    | '/locations'
-    | '/programs'
   id:
     | '__root__'
     | '/'
-    | '/book'
+    | '/about'
+    | '/business-owners'
     | '/contact'
-    | '/faqs'
-    | '/free-learning-plan'
-    | '/how-it-works'
-    | '/our-tutors'
-    | '/pricing'
+    | '/investment-approach'
+    | '/investment-criteria'
     | '/privacy-policy'
-    | '/resources'
-    | '/reviews'
     | '/terms'
-    | '/locations/$city'
-    | '/programs/grades-2-5'
-    | '/programs/grades-6-10'
-    | '/programs/grades-9-12'
-    | '/locations/'
-    | '/programs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BookRoute: typeof BookRoute
+  AboutRoute: typeof AboutRoute
+  BusinessOwnersRoute: typeof BusinessOwnersRoute
   ContactRoute: typeof ContactRoute
-  FaqsRoute: typeof FaqsRoute
-  FreeLearningPlanRoute: typeof FreeLearningPlanRoute
-  HowItWorksRoute: typeof HowItWorksRoute
-  OurTutorsRoute: typeof OurTutorsRoute
-  PricingRoute: typeof PricingRoute
+  InvestmentApproachRoute: typeof InvestmentApproachRoute
+  InvestmentCriteriaRoute: typeof InvestmentCriteriaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ResourcesRoute: typeof ResourcesRoute
-  ReviewsRoute: typeof ReviewsRoute
   TermsRoute: typeof TermsRoute
-  LocationsCityRoute: typeof LocationsCityRoute
-  ProgramsGrades25Route: typeof ProgramsGrades25Route
-  ProgramsGrades610Route: typeof ProgramsGrades610Route
-  ProgramsGrades912Route: typeof ProgramsGrades912Route
-  LocationsIndexRoute: typeof LocationsIndexRoute
-  ProgramsIndexRoute: typeof ProgramsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -273,11 +143,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/book': {
-      id: '/book'
-      path: '/book'
-      fullPath: '/book'
-      preLoaderRoute: typeof BookRouteImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-owners': {
+      id: '/business-owners'
+      path: '/business-owners'
+      fullPath: '/business-owners'
+      preLoaderRoute: typeof BusinessOwnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -287,39 +164,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/faqs': {
-      id: '/faqs'
-      path: '/faqs'
-      fullPath: '/faqs'
-      preLoaderRoute: typeof FaqsRouteImport
+    '/investment-approach': {
+      id: '/investment-approach'
+      path: '/investment-approach'
+      fullPath: '/investment-approach'
+      preLoaderRoute: typeof InvestmentApproachRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/free-learning-plan': {
-      id: '/free-learning-plan'
-      path: '/free-learning-plan'
-      fullPath: '/free-learning-plan'
-      preLoaderRoute: typeof FreeLearningPlanRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/our-tutors': {
-      id: '/our-tutors'
-      path: '/our-tutors'
-      fullPath: '/our-tutors'
-      preLoaderRoute: typeof OurTutorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
+    '/investment-criteria': {
+      id: '/investment-criteria'
+      path: '/investment-criteria'
+      fullPath: '/investment-criteria'
+      preLoaderRoute: typeof InvestmentCriteriaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -329,20 +185,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -350,70 +192,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/locations/': {
-      id: '/locations/'
-      path: '/locations'
-      fullPath: '/locations/'
-      preLoaderRoute: typeof LocationsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/locations/$city': {
-      id: '/locations/$city'
-      path: '/locations/$city'
-      fullPath: '/locations/$city'
-      preLoaderRoute: typeof LocationsCityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs/': {
-      id: '/programs/'
-      path: '/programs'
-      fullPath: '/programs/'
-      preLoaderRoute: typeof ProgramsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs/grades-2-5': {
-      id: '/programs/grades-2-5'
-      path: '/programs/grades-2-5'
-      fullPath: '/programs/grades-2-5'
-      preLoaderRoute: typeof ProgramsGrades25RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs/grades-6-10': {
-      id: '/programs/grades-6-10'
-      path: '/programs/grades-6-10'
-      fullPath: '/programs/grades-6-10'
-      preLoaderRoute: typeof ProgramsGrades610RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs/grades-9-12': {
-      id: '/programs/grades-9-12'
-      path: '/programs/grades-9-12'
-      fullPath: '/programs/grades-9-12'
-      preLoaderRoute: typeof ProgramsGrades912RouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BookRoute: BookRoute,
+  AboutRoute: AboutRoute,
+  BusinessOwnersRoute: BusinessOwnersRoute,
   ContactRoute: ContactRoute,
-  FaqsRoute: FaqsRoute,
-  FreeLearningPlanRoute: FreeLearningPlanRoute,
-  HowItWorksRoute: HowItWorksRoute,
-  OurTutorsRoute: OurTutorsRoute,
-  PricingRoute: PricingRoute,
+  InvestmentApproachRoute: InvestmentApproachRoute,
+  InvestmentCriteriaRoute: InvestmentCriteriaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ResourcesRoute: ResourcesRoute,
-  ReviewsRoute: ReviewsRoute,
   TermsRoute: TermsRoute,
-  LocationsCityRoute: LocationsCityRoute,
-  ProgramsGrades25Route: ProgramsGrades25Route,
-  ProgramsGrades610Route: ProgramsGrades610Route,
-  ProgramsGrades912Route: ProgramsGrades912Route,
-  LocationsIndexRoute: LocationsIndexRoute,
-  ProgramsIndexRoute: ProgramsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
